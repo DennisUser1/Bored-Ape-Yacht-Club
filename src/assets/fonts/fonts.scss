@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'BiroScriptPlus-Bold';
+    src: local('BiroScriptPlus Bold'), 
+         url('./BiroScript/BiroScriptPlus-Bold.ttf') format('truetype'),
+         url('./BiroScript/BiroScriptPlus-Bold.woff') format('woff'),
+         url('./BiroScript/BiroScriptPlus-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MessinaSansMono-Regular';
+    src: local('MessinaSansMono Regular'), 
+         url('./MessinaSans/MessinaSansMono-Regular.ttf') format('truetype'),
+         url('./MessinaSans/MessinaSansMono-Regular.woff') format('woff'),
+         url('./MessinaSans/MessinaSansMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MessinaSansMono-SemiBold';
+    src: local('MessinaSansMono SemiBold'), 
+         url('./MessinaSans/MessinaSansMono-SemiBold.ttf') format('truetype'),
+         url('./MessinaSans/MessinaSansMono-SemiBold.woff') format('woff'),
+         url('./MessinaSans/MessinaSansMono-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RightGrotesk';
+    src: local('Right Grotesk CompactBlack'), 
+         url('./RightGrotesk/RightGrotesk-CompactBlack.otf') format('opentype'),
+         url('./RightGrotesk/RightGrotesk-CompactBlack.ttf') format('truetype'),
+         url('./RightGrotesk/RightGrotesk-CompactBlack.woff') format('woff'),
+         url('./RightGrotesk/RightGrotesk-CompactBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
