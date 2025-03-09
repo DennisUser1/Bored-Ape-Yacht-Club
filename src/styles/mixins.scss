@@ -1,0 +1,48 @@
+@import '/src/styles/variables.scss';
+
+@mixin text($font-weight: 400, $font-size: 12px, $line-height: 14px) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+%container {
+    padding: 60px 72px 0;
+    min-width: 320px;
+    max-width: 480px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        padding: 80px 88px 0;
+        max-width: 768px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding: 120px 124px 0;
+        max-width: 1280px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        padding: 120px 204px 0;
+        max-width: 1440px;
+    }
+}
+
+%title {
+    font-family: 'Right Grotesk', sans-serif;
+    color: $main-text-color;
+    @include text(900, 44px, 40px);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 768px) {
+        @include text(900, 80px, 80px);
+        margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        @include text(900, 160px, 160px);
+        margin-bottom: 80px;
+    }
+}
