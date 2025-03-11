@@ -1,6 +1,6 @@
 import { IIconProps } from '../../../types';
 
-const Logomark: React.FC<IIconProps> = ({ className }) => {
+const OpenseaMark: React.FC<IIconProps> = ({ className }) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -44,4 +44,4 @@ const Logomark: React.FC<IIconProps> = ({ className }) => {
   );
 };
 
-export default Logomark;
+export default OpenseaMark;
