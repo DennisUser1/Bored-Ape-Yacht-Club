@@ -4,6 +4,8 @@ import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
 import { contactFormSchema } from "../../helpers";
 import cn from "classnames";
 import styles from "./ContactForm.module.scss";
+import Metamask from "../../assets/images/icons/Metamask";
+import Discord from "../../assets/images/icons/Discord";
 
 const ContactForm: React.FC = () => {
   const [isMinted, setIsMinted] = useState(false);
@@ -39,7 +41,9 @@ const ContactForm: React.FC = () => {
         return (
           <Form className={styles.form}>
             <div className={styles.form__input_wrapper}>
-              <div className={styles.form__icon_container}></div>
+              <div className={styles.form__icon_container}>
+                <Discord className={styles.form__icon} />
+              </div>
 
               <div className={styles.form__field}>
                 <Field
@@ -61,7 +65,9 @@ const ContactForm: React.FC = () => {
             </div>
 
             <div className={styles.form__input_wrapper}>
-              <div className={styles.form__icon_container}></div>
+              <div className={styles.form__icon_container}>
+                <Metamask />
+              </div>
 
               <div className={styles.form__field}>
                 <Field

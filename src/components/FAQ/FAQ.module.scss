@@ -1,0 +1,22 @@
+@import 'src/styles/mixins.scss';
+
+.faq {
+    @extend %container;
+}
+
+.faq__title {
+    @extend %title;
+}
+
+.faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media screen and (min-width: 768px) {
+        gap: 18px;
+    }
+    @media screen and (min-width: 768px) {
+        gap: 24px;
+    }
+}
