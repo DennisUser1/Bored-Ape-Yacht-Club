@@ -1,4 +1,4 @@
-@import '/src/styles/variables.scss';
+@import '@/styles/variables.scss';
 
 @mixin text($font-weight: 400, $font-size: 12px, $line-height: 14px) {
     font-weight: $font-weight;
