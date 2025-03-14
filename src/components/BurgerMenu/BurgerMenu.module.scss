@@ -1,0 +1,164 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    visibility: hidden;
+    overflow: hidden;
+
+    background-color: $main-background-color;
+    transition: all $transition;
+    z-index: 10;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+    padding: 62px 16px 24px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 420px;
+}
+
+.logo {
+    &:hover .logo__icon,
+    &:focus .logo__icon {
+        fill: $accent-color;
+    }
+}
+
+.logo__icon {
+    width: 48px;
+    min-height: 32px;
+    fill: $main-text-color;
+    transition: fill $transition;
+}
+
+.menu__btn {
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: $second-btn-background-color;
+
+    & span {
+        position: relative;
+        font-family: 'MessinaSansMono-SemiBold', monospace;
+        @include text(600, 12px, 14px);
+        color: $main-text-color;
+        transition: color $transition;
+    }
+
+    &:hover span,
+    &:focus span {
+        color: $accent-color;
+    }
+
+    & span::after {
+        content: ' ';
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: -1px;
+        width: 0%;
+        height: 1px;
+        border-radius: 1px;
+        background-color: $accent-color;
+        transition: width $transition;
+    }
+
+    &:hover span::after,
+    &:focus span::after {
+        width: 100%;
+    }
+}
+
+.menu__list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 16px;
+}
+
+.menu__item {
+    display: flex;
+    justify-content: center;
+
+    &:not(:last-of-type) {
+        margin-bottom: 16px;
+    }
+}
+
+.menu__link {
+    @include text(600, 24px, 29px);
+    transition: color $transition;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+.copyright {
+    @include text(400, 12px, 14px);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.media_links {
+    position: absolute;
+    top: 8px;
+    right: 0;
+}
+
+.media_item {
+    &:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+}
+
+.media_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: $second-btn-background-color;
+
+    &:hover .media_icon,
+    &:focus .media_icon {
+        fill: $accent-color;
+    }
+}
+
+.media_icon {
+    width: 16px;
+    height: 16px;
+    fill: $main-text-color;
+    transition: fill $transition;
+}
+
+.open {
+    visibility: visible;
+    height: 100%;
+}

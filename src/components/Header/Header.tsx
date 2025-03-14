@@ -7,6 +7,7 @@ import styles from "./Header.module.scss";
 import Discord from "../../assets/images/icons/Discord";
 import OpenseaMark from "../../assets/images/icons/OpenseaMark";
 import Twitter from "../../assets/images/icons/Twitter";
+import Hero from "../Hero";
 
 const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
   const menu = ["mint", "arts", "faq", "m-map", "about"];
@@ -61,7 +62,18 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
 
                 {menu.map((id, index) => (
                   <li key={index}>
-                    <Link>
+                    <Link className={cn(styles.header__menu_link, {
+                      [styles.open]: isOpenMenu,
+                      [styles.header__scrolled]: isScrolled,
+                    })}
+                    to={id}
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    onClick={() => setIsOpenMenu(prev => !prev)}
+                    aria-label={`Link to the ${id} section`}
+                    >
                       <span>{id}</span>
                     </Link>
                   </li>
@@ -117,6 +129,7 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
               </li>
             </ul>
           </div>
+          <Hero />
         </div>
       </div>
     </div>
