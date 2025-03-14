@@ -3,6 +3,7 @@ import FAQ from "./components/FAQ";
 import ContactUs from "./components/ContactUs";
 import { useEffect, useRef, useState } from "react";
 import About from "./components/About";
+import Arts from "./components/Arts";
 
 const App: React.FC = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -28,6 +29,7 @@ const App: React.FC = () => {
       <main>
         <About innerRef={aboutRef} />
         <FAQ />
+        <Arts />
         <ContactUs />
       </main>
     </>
