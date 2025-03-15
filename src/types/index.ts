@@ -4,3 +4,6 @@ export type { IBurgerMenuProps } from './IBurgerMenuProps';
 export type { IFAQItemProps } from './IFAQItemProps';
 export type { IContactFormValue } from './IContactFormValue';
 export type { IHeaderProp } from './IHeaderProp';
+export type { ISliderProp } from './ISliderProp';
+export type { ISlideControlProps } from './ISlideControlProps';
+export type { IMapProps } from './IMapProps';
