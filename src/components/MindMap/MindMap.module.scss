@@ -1,0 +1,26 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.map {
+    @extend %container;
+}
+
+.map__title {
+    @extend %title;
+}
+
+.map__list_slider {
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.map__list {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
