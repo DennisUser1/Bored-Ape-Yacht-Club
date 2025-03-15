@@ -4,6 +4,7 @@ import ContactUs from "./components/ContactUs";
 import { useEffect, useRef, useState } from "react";
 import About from "./components/About";
 import Arts from "./components/Arts";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -32,6 +33,7 @@ const App: React.FC = () => {
         <Arts />
         <ContactUs />
       </main>
+      <Footer />
     </>
   );
 };
