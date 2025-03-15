@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ISliderProp } from '../../types/ISliderProp';
+import SlideControlButtons from '../SlideControlButtons';
 
 const SliderWrapper: React.FC<ISliderProp> = ({ children }) => {
   const sliderRef = useRef<InstanceType<typeof Slider> | null>(null);

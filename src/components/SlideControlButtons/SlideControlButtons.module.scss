@@ -1,0 +1,35 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+
+.btn__container {
+    display: flex;
+    justify-content: space-around;
+    width: 216px;
+    margin: 24px auto 0;
+
+    @media screen and (min-width: 768px) {
+        justify-content: space-between;
+        width: 150px;
+    }
+}
+
+.btn {
+    font-family: 'BiroScriptPlus-Bold', sans-serif;
+    @include text(400, 24px, 24px);
+
+    border: none;
+    cursor: pointer;
+    color: $main-text-color;
+    background-color: inherit;
+    transition: color $transition;
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+
+    @media screen and (min-width: 768px) {
+        @include text(400, 24px, 30px);
+    }
+}
