@@ -61,11 +61,27 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
           <ul>
             {menu
               .map((id, index) => (
-                <li key={index} className={styles.menu__item}>{id}</li>
+                <li key={index} className={styles.menu__item}>
+                  <Link
+                    className={styles.menu__link}
+                    to={id}
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    onClick={onClick}
+                    aria-label={`Link to the ${id} section`}
+                  >
+                    {id}
+                  </Link>
+                </li>
               ))
               .reverse()}
           </ul>
         </nav>
+
+        <p className={styles.copyright}>&copy; Yacht ape 2024 all rights</p>
+        <p className={styles.copyright}>reserved</p>
       </div>
     </div>
   );

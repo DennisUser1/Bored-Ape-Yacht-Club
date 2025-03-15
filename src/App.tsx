@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import About from "./components/About";
 import Arts from "./components/Arts";
 import Footer from "./components/Footer";
+import MindMap from "./components/MindMap";
 
 const App: React.FC = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ const App: React.FC = () => {
       <Header isScrolled={isScrolled}/>
       <main>
         <About innerRef={aboutRef} />
+        <MindMap />
         <FAQ />
         <Arts />
         <ContactUs />
