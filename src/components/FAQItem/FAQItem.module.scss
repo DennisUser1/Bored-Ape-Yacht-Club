@@ -75,7 +75,7 @@
     }
 
     @media screen and (min-width: 1280px) {
-        @iclude text(900, 64px, 64px);
+        @include text(900, 64px, 64px);
     }
 }
 
@@ -108,7 +108,7 @@
         padding-left: 58px;
     }
 
-    @media sreen and (min-width: 768px) {
+    @media screen and (min-width: 768px) {
         @include text(400, 16px, 19px);
         padding-left: 77px;
     }

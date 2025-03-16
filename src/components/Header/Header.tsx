@@ -8,6 +8,7 @@ import Discord from "../../assets/images/icons/Discord";
 import OpenseaMark from "../../assets/images/icons/OpenseaMark";
 import Twitter from "../../assets/images/icons/Twitter";
 import Hero from "../Hero";
+import BurgerMenu from "../BurgerMenu";
 
 const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
   const menu = ["mint", "arts", "faq", "m-map", "about"];
@@ -17,16 +18,16 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
     setIsOpenMenu((prev) => !prev);
 
     if (!isOpenMenu && window.innerWidth < 767) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "hidden auto";
+      document.body.style.overflow = 'hidden auto';
     }
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.content__wrap}>
+        <div className={styles.content__wrap_box}>
           <header className={styles.header}>
             <a
               href="./"
@@ -88,7 +89,7 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
             })}
           >
             <ul className={styles.media__links}>
-              <li className={styles.media_item}>
+              <li className={styles.media__item}>
                 <a
                   href="https://discord.com/"
                   className={cn(styles.media__link, {
@@ -130,6 +131,9 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
             </ul>
           </div>
           <Hero />
+          {window.innerWidth <= 767 && (
+            <BurgerMenu isOpen={isOpenMenu} onClick={toggleMenu} />
+          )}
         </div>
       </div>
     </div>

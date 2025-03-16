@@ -2,6 +2,10 @@ import { IBurgerMenuProps } from "../../types/IBurgerMenuProps";
 import cn from "classnames";
 import styles from "./BurgerMenu.module.scss";
 import { Link } from "react-scroll";
+import Logo from "../../assets/images/icons/Logo";
+import Discord from "../../assets/images/icons/Discord";
+import OpenseaMark from "../../assets/images/icons/OpenseaMark";
+import Twitter from "../../assets/images/icons/Twitter";
 
 const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
   const menu = ["mint", "arts", "faq", "m-map", "about"];
@@ -15,7 +19,9 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
             className={styles.logo}
             aria-label="Logo, link to the main page"
             onClick={onClick}
-          ></a>
+          >
+            <Logo className={styles.logo__icon} />
+          </a>
           <button
             type="button"
             aria-label="Close the mobile menu"
@@ -35,7 +41,9 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 aria-label="Link to Discord social network"
-              ></a>
+              >
+                <Discord className={styles.media_icon} />
+              </a>
             </li>
             <li className={styles.media_item}>
               <a
@@ -44,7 +52,9 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 aria-label="Link to collections marketplace OpenSea"
-              ></a>
+              >
+                <OpenseaMark className={styles.media_icon} />
+              </a>
             </li>
             <li className={styles.media_item}>
               <a
@@ -53,7 +63,9 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 aria-label="Link to Twitter(X) social network"
-              ></a>
+              >
+                <Twitter className={styles.media_icon} />
+              </a>
             </li>
             <li className={styles.media_item}></li>
           </ul>

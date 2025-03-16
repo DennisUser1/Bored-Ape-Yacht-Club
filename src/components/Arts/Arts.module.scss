@@ -1,7 +1,7 @@
 @import '@/styles/variables.scss';
 @import '@/styles/mixins.scss';
 
-.art {
+.arts {
     @extend %container;
 
     @media screen and (min-width: 768px) {
