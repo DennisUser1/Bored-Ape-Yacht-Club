@@ -338,9 +338,11 @@
   
     width: 48px;
     height: 48px;
-  
+    
+    border: none;
     border-radius: 8px;
     background-color: $btn-background-color;
+    color: $second-text-color;
   
     @media screen and (min-width: 1280px) {
       width: 80px;
@@ -377,4 +379,24 @@
       width: 24px;
       height: 24px;
     }
+
+    path:nth-child(3) {
+        animation: soundWave 1s infinite;
+    }
+    &.sound-off {
+        path:nth-child(3) {
+            animation: none;
+            opacity: 0.5;
+        }
+
+        .sound-wave {
+            fill: $second-text-color;
+        }
+    }
+}
+
+@keyframes soundWave {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IHeaderProp } from "../../types";
 import cn from "classnames";
 import Logo from "../../assets/images/icons/Logo";
@@ -9,10 +9,15 @@ import OpenseaMark from "../../assets/images/icons/OpenseaMark";
 import Twitter from "../../assets/images/icons/Twitter";
 import Hero from "../Hero";
 import BurgerMenu from "../BurgerMenu";
+import backgroundMusic from "../../assets/audio/clubhouse.mp3";
+import SoundOn from "../../assets/images/icons/SoundOn";
+import SoundOff from "../../assets/images/icons/SoundOff";
 
 const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
   const menu = ["mint", "arts", "faq", "m-map", "about"];
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [audio] = useState(new Audio(backgroundMusic));
 
   const toggleMenu = () => {
     setIsOpenMenu((prev) => !prev);
@@ -21,6 +26,23 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'hidden auto';
+    }
+  };
+
+  useEffect(() => {
+    audio.loop = true;
+    if (isPlaying) {
+      audio.play().catch(() => setIsPlaying(false));
+    }
+    return () => audio.pause();
+  }, [audio, isPlaying]);
+
+  const toggleAudio = () => {
+    setIsPlaying(!isPlaying);
+    if (!isPlaying) {
+      audio.play();
+    } else {
+      audio.pause();
     }
   };
 
@@ -63,17 +85,18 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
 
                 {menu.map((id, index) => (
                   <li key={index}>
-                    <Link className={cn(styles.header__menu_link, {
-                      [styles.open]: isOpenMenu,
-                      [styles.header__scrolled]: isScrolled,
-                    })}
-                    to={id}
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                    onClick={() => setIsOpenMenu(prev => !prev)}
-                    aria-label={`Link to the ${id} section`}
+                    <Link
+                      className={cn(styles.header__menu_link, {
+                        [styles.open]: isOpenMenu,
+                        [styles.header__scrolled]: isScrolled,
+                      })}
+                      to={id}
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      duration={500}
+                      onClick={() => setIsOpenMenu((prev) => !prev)}
+                      aria-label={`Link to the ${id} section`}
                     >
                       <span>{id}</span>
                     </Link>
@@ -104,7 +127,7 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
               </li>
               <li className={styles.media__item}>
                 <a
-                  href="https://opensea.io/"
+                  href="https://opensea.io/collection/boredapeyachtclub"
                   className={cn(styles.media__link, {
                     [styles.header__scrolled]: isScrolled,
                   })}
@@ -117,7 +140,7 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
               </li>
               <li className={styles.media__item}>
                 <a
-                  href="https://twitter.com/"
+                  href="https://twitter.com/BoredApeYC?t=PTAZxWP3-AssmzNaf8DKkQ&s=35"
                   className={cn(styles.media__link, {
                     [styles.header__scrolled]: isScrolled,
                   })}
@@ -128,11 +151,32 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
                   <Twitter className={styles.media__icon} />
                 </a>
               </li>
+              <li className={styles.media__item}>
+                <button
+                  className={cn(styles.media__link, {
+                    [styles.header__scrolled]: isScrolled,
+                    [styles.soundOff]: !isPlaying,
+                  })}
+                  onClick={toggleAudio}
+                  aria-label={isPlaying ? "Mute music" : "Unmute music"}
+                >
+                  {isPlaying ? (
+                    <SoundOn className={styles.media__icon} />
+                  ) : (
+                    <SoundOff className={styles.media__icon} />
+                  )}
+                </button>
+              </li>
             </ul>
           </div>
           <Hero />
           {window.innerWidth <= 767 && (
-            <BurgerMenu isOpen={isOpenMenu} onClick={toggleMenu} />
+            <BurgerMenu
+              isOpen={isOpenMenu}
+              onClick={toggleMenu}
+              isPlaying={isPlaying}
+              toggleAudio={toggleAudio}
+            />
           )}
         </div>
       </div>

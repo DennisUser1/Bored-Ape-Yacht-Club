@@ -142,8 +142,10 @@
     align-items: center;
     width: 48px;
     height: 48px;
+    border: none;
     border-radius: 8px;
     background-color: $second-btn-background-color;
+    color: $second-text-color;
 
     &:hover .media_icon,
     &:focus .media_icon {

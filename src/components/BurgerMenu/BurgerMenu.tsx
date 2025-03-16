@@ -6,8 +6,15 @@ import Logo from "../../assets/images/icons/Logo";
 import Discord from "../../assets/images/icons/Discord";
 import OpenseaMark from "../../assets/images/icons/OpenseaMark";
 import Twitter from "../../assets/images/icons/Twitter";
+import SoundOn from "../../assets/images/icons/SoundOn";
+import SoundOff from "../../assets/images/icons/SoundOff";
 
-const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
+const BurgerMenu: React.FC<IBurgerMenuProps> = ({
+  isOpen,
+  onClick,
+  isPlaying,
+  toggleAudio,
+}) => {
   const menu = ["mint", "arts", "faq", "m-map", "about"];
 
   return (
@@ -47,7 +54,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
             </li>
             <li className={styles.media_item}>
               <a
-                href="https://opensea.io/"
+                href="https://opensea.io/collection/boredapeyachtclub"
                 className={styles.media_link}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
@@ -58,7 +65,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
             </li>
             <li className={styles.media_item}>
               <a
-                href="https://twitter.com/"
+                href="https://twitter.com/BoredApeYC?t=PTAZxWP3-AssmzNaf8DKkQ&s=35"
                 className={styles.media_link}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
@@ -67,7 +74,21 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, onClick }) => {
                 <Twitter className={styles.media_icon} />
               </a>
             </li>
-            <li className={styles.media_item}></li>
+            <li className={styles.media_item}>
+              <button
+                className={cn(styles.media_link, {
+                  [styles.soundOff]: !isPlaying,
+                })}
+                onClick={toggleAudio}
+                aria-label={isPlaying ? "Mute music" : "Unmute music"}
+              >
+                {isPlaying ? (
+                  <SoundOn className={styles.media_icon} />
+                ) : (
+                  <SoundOff className={styles.media_icon} />
+                )}
+              </button>
+            </li>
           </ul>
 
           <ul>
