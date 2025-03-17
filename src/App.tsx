@@ -6,6 +6,7 @@ import About from "./components/About";
 import Arts from "./components/Arts";
 import Footer from "./components/Footer";
 import MindMap from "./components/MindMap";
+import Metaverse from "./components/Metaverse";
 
 const App: React.FC = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ const App: React.FC = () => {
       <main>
         <About innerRef={aboutRef} />
         <MindMap />
+        <Metaverse />
         <FAQ />
         <Arts />
         <ContactUs />

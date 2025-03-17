@@ -4,7 +4,6 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/Bored-Ape-Yacht-Club/",
   plugins: [react()],
   resolve: {
     alias: {

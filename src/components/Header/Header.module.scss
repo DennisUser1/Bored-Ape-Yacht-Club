@@ -131,11 +131,11 @@
 
     &.open {
         @media screen and (min-width: 768px) {
-            width: 288px;
+            width: 345px;
         }
 
         @media screen and (min-width: 1280px) {
-            width: 480px;
+            width: 560px;
         }
     }
     
@@ -353,18 +353,23 @@
     &:hover .media__icon,
     &:focus .media__icon {
       fill: $main-text-color;
+      color: $main-text-color;
     }
   
     &.header__scrolled {
+      backdrop-filter: blur(5px);
       background-color: $second-btn-background-color;
+      color: $second-text-color;
   
       & .media__icon {
         fill: $main-text-color;
+        color: $main-text-color;
       }
   
       &:hover .media__icon,
       &:focus .media__icon {
         fill: $accent-color;
+        color: $accent-color;
       }
     }
 }

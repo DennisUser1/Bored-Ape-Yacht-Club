@@ -15,7 +15,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({
   isPlaying,
   toggleAudio,
 }) => {
-  const menu = ["mint", "arts", "faq", "m-map", "about"];
+  const menu = ["mint", "arts", "faq", "meta", "m-map", "about"];
 
   return (
     <div className={cn(styles.container, { [styles.open]: isOpen })}>

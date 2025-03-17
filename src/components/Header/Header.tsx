@@ -9,15 +9,15 @@ import OpenseaMark from "../../assets/images/icons/OpenseaMark";
 import Twitter from "../../assets/images/icons/Twitter";
 import Hero from "../Hero";
 import BurgerMenu from "../BurgerMenu";
-import backgroundMusic from "../../assets/audio/clubhouse.mp3";
+// import backgroundMusic from "../../assets/audio/clubhouse.mp3";
 import SoundOn from "../../assets/images/icons/SoundOn";
 import SoundOff from "../../assets/images/icons/SoundOff";
 
 const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
-  const menu = ["mint", "arts", "faq", "m-map", "about"];
+  const menu = ["mint", "arts", "faq", "meta", "m-map", "about"];
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [audio] = useState(new Audio(backgroundMusic));
+  const [audio] = useState(new Audio('/audio/clubhouse.mp3'));
 
   const toggleMenu = () => {
     setIsOpenMenu((prev) => !prev);

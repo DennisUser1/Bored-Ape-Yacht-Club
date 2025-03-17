@@ -1,0 +1,35 @@
+
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.metaverse {
+    padding: 54px 8px 0px;
+    min-width: 320px;
+    max-width: 480px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        padding: 80px 88px 0;
+        max-width: 768px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding: 120px 124px 0;
+        max-width: 1280px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        padding: 120px 204px 0;
+        max-width: 1440px;
+    }
+}
+.meta__title {
+    @extend %title;
+}
+.meta__video { 
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    border: 2px solid $second-background-color;  
+    border-radius: 12px;  
+    overflow: hidden;  
+}

@@ -7,7 +7,7 @@ const FAQ: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState(1);
 
   return (
-    <section className={styles.faq}>
+    <section className={styles.faq} id="faq">
       <h2 className={styles.faq__title}>FAQ</h2>
 
       <ul className={styles.faq__list}>
