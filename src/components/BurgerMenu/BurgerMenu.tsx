@@ -43,7 +43,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({
           <ul className={styles.media_links}>
             <li className={styles.media_item}>
               <a
-                href="https://discord.com/"
+                href="https://discord.com/invite/3P5K3dzgdB"
                 className={styles.media_link}
                 target="_blank"
                 rel="noopener noreferrer nofollow"

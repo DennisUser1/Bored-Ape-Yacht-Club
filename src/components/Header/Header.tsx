@@ -114,7 +114,7 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
             <ul className={styles.media__links}>
               <li className={styles.media__item}>
                 <a
-                  href="https://discord.com/"
+                  href="https://discord.com/invite/3P5K3dzgdB"
                   className={cn(styles.media__link, {
                     [styles.header__scrolled]: isScrolled,
                   })}

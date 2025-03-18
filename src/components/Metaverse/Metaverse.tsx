@@ -1,5 +1,6 @@
 import ReactPlayer from "react-player";
 import styles from "./Metaverse.module.scss";
+import imagesMetaverse from '../../assets/images/metaverse.png';
 
 const Metaverse: React.FC = () => {
   return (
@@ -21,6 +22,9 @@ const Metaverse: React.FC = () => {
             },
           }}
         />
+      </div>
+      <div className={styles.meta__image}>
+        <img src={imagesMetaverse} alt="Metaverse Preview" />
       </div>
     </div>
   );

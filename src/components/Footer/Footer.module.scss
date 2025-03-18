@@ -4,6 +4,7 @@
 .footer {
     @extend %container;
     padding-bottom: 24px;
+    position: relative;
 
     @media screen and (min-width: 768px) {
         display: flex;
@@ -14,6 +15,35 @@
 
     @media screen and (min-width: 768px) {
         gap: 10px;
+    }
+}
+
+.footer__image {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: -80px;
+    top: -80px;
+   
+    @media screen and (min-width: 768px) {
+        width: 200px;
+        height: 200px;
+        left: 30px;
+        top: -120px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 300px;
+        height: 300px;
+        left: 90px;
+        top: -200px;
+    }
+
+    @media screen and (min-width: 1440px) { 
+        left: 30px;
+        top: -340px;
+        width: 400px;
+        height: 400px;
     }
 }
 
