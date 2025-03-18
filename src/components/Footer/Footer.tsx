@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className={styles.footer__image}>
         <img src={imageApe} alt="Ape" />
       </div>
-      <p className={styles.copyright}>&copy; Yacht ape 2024 all rights</p>{" "}
+      <p className={styles.copyright}>&copy; Yacht ape 2025 all rights</p>{" "}
       <p className={styles.copyright}>reserved</p>
     </footer>
   );

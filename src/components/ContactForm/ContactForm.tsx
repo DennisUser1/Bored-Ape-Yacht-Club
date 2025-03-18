@@ -1,45 +1,65 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IContactFormValue } from "../../types/IContactFormValue";
-import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
+import { ErrorMessage, Field, Form, Formik, FormikHelpers, useFormikContext } from "formik";
 import { contactFormSchema } from "../../helpers";
 import cn from "classnames";
 import styles from "./ContactForm.module.scss";
 import Metamask from "../../assets/images/icons/Metamask";
 import Discord from "../../assets/images/icons/Discord";
+import { ToastContainer, toast } from "react-toastify";
+
+const FormObserver: React.FC = () => {
+  const { values } = useFormikContext<IContactFormValue>();
+  
+  useEffect(() => {
+    localStorage.setItem("discord", values.discord);
+    localStorage.setItem("metamask", values.metamask);
+  }, [values]);
+
+  return null;
+};
 
 const ContactForm: React.FC = () => {
   const [isMinted, setIsMinted] = useState(false);
 
   const initialValues: IContactFormValue = {
-    discord: "",
-    metamask: "",
+    discord: localStorage.getItem("discord") ?? "",
+    metamask: localStorage.getItem("metamask") ?? "",
   };
 
   const onSubmit = (
-    value: IContactFormValue,
+    values: IContactFormValue,
     { resetForm }: FormikHelpers<IContactFormValue>
   ) => {
-    console.log("Discord: ", value.discord.toUpperCase());
-    console.log("MetaMask: ", value.metamask.toUpperCase());
+    console.log("Discord: ", values.discord.toUpperCase());
+    console.log("MetaMask: ", values.metamask.toUpperCase());
+    
+    toast.success(`Thank you, ${values.discord}! Form submitted successfully!`);
     setIsMinted(true);
 
-    setTimeout(() => {
-      setIsMinted(false);
-      resetForm();
-    }, 4000);
+    localStorage.removeItem("discord");
+    localStorage.removeItem("metamask");
+    
+    resetForm({
+      values: { discord: "", metamask: "" },
+      touched: { discord: false, metamask: false }
+    });
+    
+    setTimeout(() => setIsMinted(false), 4000);
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={contactFormSchema}
-      onSubmit={onSubmit}
-    >
-      {({ errors: { discord, metamask }, touched }) => {
-        const buttonText =
-          discord || metamask ? "ERROR" : isMinted ? "MINTED" : "MINT";
-        return (
+    <>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={contactFormSchema}
+        onSubmit={onSubmit}
+        enableReinitialize  
+      >
+        {({ errors, touched }) => (
           <Form className={styles.form}>
+            <FormObserver />  
+            
             <div className={styles.form__input_wrapper}>
               <div className={styles.form__icon_container}>
                 <Discord className={styles.form__icon} />
@@ -51,7 +71,7 @@ const ContactForm: React.FC = () => {
                   name="discord"
                   type="text"
                   className={cn(styles.form__input, {
-                    [styles.error]: touched.discord && discord,
+                    [styles.error]: touched.discord && errors.discord,
                   })}
                   autoComplete="off"
                   placeholder="@username"
@@ -75,7 +95,7 @@ const ContactForm: React.FC = () => {
                   name="metamask"
                   type="text"
                   className={cn(styles.form__input, {
-                    [styles.error]: touched.metamask && metamask,
+                    [styles.error]: touched.metamask && errors.metamask,
                   })}
                   autoComplete="off"
                   placeholder="Wallet address"
@@ -93,12 +113,28 @@ const ContactForm: React.FC = () => {
               aria-label="Submit MINT form"
               className={styles.form__submit}
             >
-              {buttonText}
+              {errors.discord || errors.metamask 
+                ? "ERROR" 
+                : isMinted 
+                ? "MINTED" 
+                : "MINT"}
             </button>
           </Form>
-        );
-      }}
-    </Formik>
+        )}
+      </Formik>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+    </>
   );
 };
 

@@ -113,7 +113,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({
           </ul>
         </nav>
 
-        <p className={styles.copyright}>&copy; Yacht ape 2024 all rights</p>
+        <p className={styles.copyright}>&copy; Yacht ape 2025 all rights</p>
         <p className={styles.copyright}>reserved</p>
       </div>
     </div>
