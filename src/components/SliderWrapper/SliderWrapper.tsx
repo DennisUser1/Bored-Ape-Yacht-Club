@@ -7,6 +7,12 @@ import SlideControlButtons from "../SlideControlButtons";
 import React from "react";
 import styles from './SliderWrapper.module.scss';
 
+const getSlidesToShow = (width: number): number => {
+  if (width < 767) return 1;
+  if (width < 1280) return 2;
+  return 4;
+};
+
 const SliderWrapper: React.FC<ISliderProp> = ({ children }) => {
   const sliderRef = useRef<InstanceType<typeof Slider> | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,9 +24,7 @@ const SliderWrapper: React.FC<ISliderProp> = ({ children }) => {
 
   const updateSlidesToShow = () => {
     const width = window.innerWidth;
-    setSlidesToShow(
-      width < 767 ? 1 : width < 1280 ? 2 : 4
-    );
+    setSlidesToShow(getSlidesToShow(width));
   };
 
   useEffect(() => {
@@ -41,7 +45,7 @@ const SliderWrapper: React.FC<ISliderProp> = ({ children }) => {
     speed: 500,
     cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     adaptiveHeight: true,
-    beforeChange: (current: number, next: number) => setCurrentSlide(next),
+    beforeChange: (_: number, next: number) => setCurrentSlide(next),
     responsive: [
       {
         breakpoint: 1280,
