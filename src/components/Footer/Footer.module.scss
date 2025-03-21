@@ -21,7 +21,7 @@
 .footer__image {
     position: absolute;
     width: 160px;
-    height: 160px;
+    /* height: 160px; */
     left: -80px;
     top: -80px;
    
@@ -49,16 +49,20 @@
 
 .footer__image_right {
     position: absolute;
-    width: 90px;
+    width: 85px;
     height: 160px;
     right: -60px;
-    top: -65px;
+    top: -54px;
+    z-index: -3;
+    transform: translateX(-50%);
+   
    
     @media screen and (min-width: 768px) {
         width: 105px;
         height: 200px;
         right: 55px;
         top: -85px;
+        transform: none;
     }
 
     @media screen and (min-width: 1280px) {
@@ -66,6 +70,7 @@
         height: 300px;
         right: 130px;
         top: -180px;
+        transform: none;
     }
 
     @media screen and (min-width: 1440px) { 
@@ -73,6 +78,7 @@
         height: 400px;
         right: 90px;
         top: -330px;
+        transform: none;
     }
 }
 

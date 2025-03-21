@@ -16,6 +16,10 @@ body {
   background-color: #181818;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 main {
   flex: 1;
   margin: 0 auto;
