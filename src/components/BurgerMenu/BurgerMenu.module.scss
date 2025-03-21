@@ -150,6 +150,7 @@
     &:hover .media_icon,
     &:focus .media_icon {
         fill: $accent-color;
+        color: $accent-color;
     }
 }
 
@@ -157,6 +158,7 @@
     width: 16px;
     height: 16px;
     fill: $main-text-color;
+    color: $main-text-color;
     transition: fill $transition;
 }
 
