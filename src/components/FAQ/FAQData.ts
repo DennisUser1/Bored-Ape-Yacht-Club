@@ -19,7 +19,7 @@ const FAQData = [
     id: 2,
     title: "HOW DO I PURCHASE NFTS FROM A COLLECTION?",
     description:
-      "To purchase nfts from a collection, you typically need to use cryptocurrency on a blockchain0based marketplace.",
+      "To purchase nfts from a collection, you typically need to use cryptocurrency on a blockchain-based marketplace.",
     image: [faqMask2, faqMask2_2x],
   },
   {
