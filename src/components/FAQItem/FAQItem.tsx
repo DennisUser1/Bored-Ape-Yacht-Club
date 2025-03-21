@@ -14,7 +14,7 @@ const FAQItem: React.FC<IFAQItemProps> = ({
       <div className={styles.card__head}>
         <p
           className={cn(styles.card__position, {
-            [styles.card__active]: active,
+            [styles.card__active]: active
           })}
         >
           [ {id} ]

@@ -35,31 +35,31 @@
     overflow: hidden;  
 }
 
-.meta__image {
+.meta__image img {
     position: absolute;
-    bottom: -170px;
+    bottom: -100px;
     right: 10px;
     width: 200px;
-    height: 200px;
+    height: 130px;
 
     @media screen and (min-width: 768px) {
-        bottom: -230px;
+        bottom: -126px;
         right: 70px;
         width: 250px;
-        height: 250px;
+        height: 156px;
     }
 
     @media screen and (min-width: 1280px) {
-        bottom: -250px;
+        bottom: -146px;
         right: 180px;
         width: 300px;
-        height: 300px;
+        height: 188px;
     }
 
     @media screen and (min-width: 1440px) {
-        bottom: -280px;
+        bottom: -160px;
         right: 340px;
         width: 320px;
-        height: 320px;
+        height: 200px;
     }
 }
