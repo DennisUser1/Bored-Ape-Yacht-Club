@@ -10,7 +10,7 @@ const MindMapItem: React.FC<IMapProps> = ({ title, text, link }) => {
       href={link}
       rel="noopener noreferrer nofollow"
       target="_blank"
-      className={cn(styles.map__content, styles.map__link)}
+      className={cn(styles.map__content, styles.map__link, styles.group)}
       aria-label="Link to LEARN MORE"
     >
       <Arrow className={styles.map__icon} />

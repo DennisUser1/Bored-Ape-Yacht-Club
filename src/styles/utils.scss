@@ -14,11 +14,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
   background-color: #181818;
-  width: 100vw;
 }
 
 html, body {
   overflow-x: hidden;
+  width: 100vw;
+  overflow-y: auto;
 }
 
 main {

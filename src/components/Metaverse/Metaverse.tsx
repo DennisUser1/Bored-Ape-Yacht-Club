@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player";
 import styles from "./Metaverse.module.scss";
-import imagesMetaverse from '../../assets/images/metaverse.png';
+import imagesMetaverse from '../../assets/images/metaverse1.png';
 
 const Metaverse: React.FC = () => {
   return (

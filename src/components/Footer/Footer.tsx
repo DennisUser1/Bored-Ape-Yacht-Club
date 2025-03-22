@@ -1,6 +1,6 @@
 import styles from "./Footer.module.scss";
 import imageApe1 from "../../assets/images/footer1.png";
-import imageApe2 from "../../assets/images/footer3.png";
+import imageApe2 from "../../assets/images/footer4.png";
 
 const Footer: React.FC = () => {
   return (
