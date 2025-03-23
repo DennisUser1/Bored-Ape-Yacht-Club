@@ -27,7 +27,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div className={"box"}>
       <Header isScrolled={isScrolled}/>
       <main>
         <About innerRef={aboutRef} />
@@ -38,7 +38,7 @@ const App: React.FC = () => {
         <ContactUs />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
