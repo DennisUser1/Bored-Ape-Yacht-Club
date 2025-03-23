@@ -51,28 +51,28 @@
     position: absolute;
     width: 85px;
     right: -16px;
-    top: -54px;
+    top: -76px;
     z-index: -3;
 
     @media screen and (min-width: 768px) {
         width: 105px;
         height: 200px;
         right: 110px;
-        top: -85px;
+        top: -98px;
     }
 
     @media screen and (min-width: 1280px) {
         width: 175px;
         height: 300px;
         right: 130px;
-        top: -180px;
+        top: -210px;
     }
 
     @media screen and (min-width: 1440px) { 
         width: 240px;
         height: 400px;
         right: 120px;
-        top: -330px;
+        top: -350px;
     }
 }
 
