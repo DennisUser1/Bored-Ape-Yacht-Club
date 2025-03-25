@@ -27,6 +27,10 @@ import artsMask12 from "../../assets/images/nft/arts/mobile/arts_mask12-min.jpg"
 import artsMask12_2x from "../../assets/images/nft/arts/mobile/arts_mask12@2x-min.jpg";
 import artsMask13 from "../../assets/images/nft/arts/mobile/arts_mask13-min.jpg";
 import artsMask13_2x from "../../assets/images/nft/arts/mobile/arts_mask13@2x-min.jpg";
+import artsMask14 from "../../assets/images/nft/arts/mobile/arts_mask14-min.jpg";
+import artsMask14_2x from "../../assets/images/nft/arts/mobile/arts_mask14@2x-min.jpg";
+import artsMask15 from "../../assets/images/nft/arts/mobile/arts_mask15-min.jpg";
+import artsMask15_2x from "../../assets/images/nft/arts/mobile/arts_mask15@2x-min.jpg";
 
 // for tablet-desktop
 import artsMaskTab from "../../assets/images/nft/arts/tablet/arts_mask-min.jpg";
@@ -57,6 +61,10 @@ import artsMaskTab12 from "../../assets/images/nft/arts/tablet/arts_mask12-min.j
 import artsMaskTab12_2x from "../../assets/images/nft/arts/tablet/arts_mask12@2x-min.jpg";
 import artsMaskTab13 from "../../assets/images/nft/arts/tablet/arts_mask13-min.jpg";
 import artsMaskTab13_2x from "../../assets/images/nft/arts/tablet/arts_mask13@2x-min.jpg";
+import artsMaskTab14 from "../../assets/images/nft/arts/tablet/arts_mask14-min.jpg";
+import artsMaskTab14_2x from "../../assets/images/nft/arts/tablet/arts_mask14@2x-min.jpg";
+import artsMaskTab15 from "../../assets/images/nft/arts/tablet/arts_mask15-min.jpg";
+import artsMaskTab15_2x from "../../assets/images/nft/arts/tablet/arts_mask15@2x-min.jpg";
 
 const artsData = [
   {
@@ -129,6 +137,16 @@ const artsData = [
     id: 14,
     image: [artsMask13, artsMask13_2x],
     imageTab: [artsMaskTab13, artsMaskTab13_2x],
+  },
+  {
+    id: 15,
+    image: [artsMask14, artsMask14_2x],
+    imageTab: [artsMaskTab14, artsMaskTab14_2x],
+  },
+  {
+    id: 16,
+    image: [artsMask15, artsMask15_2x],
+    imageTab: [artsMaskTab15, artsMaskTab15_2x],
   },
 ];
 

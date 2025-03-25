@@ -1,5 +1,4 @@
 import Marquee from "react-fast-marquee";
-
 import styles from "./About.module.scss";
 import Cross from "../../assets/images/icons/Сross";
 

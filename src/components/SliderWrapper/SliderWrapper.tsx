@@ -1,10 +1,9 @@
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ISliderProp } from "../../types/ISliderProp";
 import SlideControlButtons from "../SlideControlButtons";
-import React from "react";
 import styles from './SliderWrapper.module.scss';
 
 const getSlidesToShow = (width: number): number => {
