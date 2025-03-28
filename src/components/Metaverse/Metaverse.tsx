@@ -18,13 +18,14 @@ const Metaverse: React.FC = () => {
                 rel: 0,
                 modestbranding: 1,
                 origin: window.location.origin,
+                enablePrivacyEnhancedMode: true,
               },
             },
           }}
         />
       </div>
       <div className={styles.meta__image}>
-        <img src={imagesMetaverse} alt="Metaverse Preview" />
+        <img src={imagesMetaverse} alt="Metaverse Preview" loading="lazy"/>
       </div>
     </div>
   );

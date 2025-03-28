@@ -9,7 +9,8 @@ import OpenseaMark from "../../assets/images/icons/OpenseaMark";
 import Twitter from "../../assets/images/icons/Twitter";
 import Hero from "../Hero";
 import BurgerMenu from "../BurgerMenu";
-import backgroundMusic from "../../assets/audio/clubhouse.mp3";
+import mp3Audio from "../../assets/audio/clubhouse.mp3";
+import oggAudio from "../../assets/audio/clubhouse.ogg";
 import SoundOn from "../../assets/images/icons/SoundOn";
 import SoundOff from "../../assets/images/icons/SoundOff";
 
@@ -17,7 +18,7 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
   const menu = ["mint", "arts", "faq", "meta", "m-map", "about"];
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [audio] = useState(new Audio(backgroundMusic));
+  const [audio] = useState(new Audio(window.Audio && new Audio().canPlayType("audio/ogg") ? oggAudio : mp3Audio));
 
   const toggleMenu = () => {
     setIsOpenMenu((prev) => !prev);
@@ -97,6 +98,7 @@ const Header: React.FC<IHeaderProp> = ({ isScrolled }) => {
                       duration={500}
                       onClick={() => setIsOpenMenu((prev) => !prev)}
                       aria-label={`Link to the ${id} section`}
+                      href={`#${id}`} 
                     >
                       <span>{id}</span>
                     </Link>
