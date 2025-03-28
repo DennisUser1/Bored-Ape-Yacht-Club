@@ -28,7 +28,7 @@
 
     font-family: 'BiroScriptPlus-Bold', sans-serif;
     color: $second-text-color;
-    @include text(400, 16px 27px);
+    @include text(400, 16px, 27px);
 
     @media screen and (min-width: 768px) {
         position: static;
