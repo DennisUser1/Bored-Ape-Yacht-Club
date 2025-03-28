@@ -40,7 +40,6 @@ const Hero: React.FC = () => {
             width={216}
             height={284}
             className={styles.hero__image}
-            loading="eager"
           />
         </picture>
 
