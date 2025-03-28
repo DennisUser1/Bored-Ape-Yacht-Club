@@ -9,7 +9,12 @@ export default defineConfig({
   base: "/Bored-Ape-Yacht-Club/",
   plugins: [
     react(),
-    imagetools(),
+    imagetools({
+      defaultDirectives: () => new URLSearchParams({
+        format: "webp", 
+        quality: "80",   
+      }),
+    }),
     viteCompression({
       algorithm: "brotliCompress",
       ext: ".br",
@@ -20,7 +25,17 @@ export default defineConfig({
       ext: ".gz",
     }),
   ],
-  build: { sourcemap: true },
+  build: {
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          player: ['react-player'],
+        }
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
