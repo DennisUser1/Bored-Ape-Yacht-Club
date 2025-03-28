@@ -46,6 +46,7 @@ const Hero: React.FC = () => {
         <Link
           className={styles.hero__link_meet}
           to="mint"
+          href="#mint" 
           spy={true}
           smooth={true}
           offset={0}
