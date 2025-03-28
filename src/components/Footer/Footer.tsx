@@ -6,10 +6,10 @@ const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__image}>
-        <img src={imageApe1} alt="Ape 1" loading="lazy"/>
+        <img src={imageApe1} alt="Ape 1" loading="lazy" width="160" height="160" />
       </div>
       <div className={styles.footer__image_right}>
-        <img src={imageApe2} alt="Ape 2" loading="lazy"/>
+        <img src={imageApe2} alt="Ape 2" loading="lazy" width="85" height="140"/>
       </div>
       <p className={styles.copyright}>&copy; Yacht ape 2025 all rights</p>{" "}
       <p className={styles.copyright}>reserved</p>
