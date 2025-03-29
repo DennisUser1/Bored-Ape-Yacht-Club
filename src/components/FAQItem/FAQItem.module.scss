@@ -80,9 +80,6 @@
 }
 
 .card__image {
-    @media screen and (max-width: 767px) {
-        display: none;
-    }
     position: absolute;
     left: 18px;
     top: 50%;
@@ -90,6 +87,10 @@
 
     width: 148px;
     border-radius: 16px;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 
     @media screen and (min-width: 1280px) {
         width: 248px;

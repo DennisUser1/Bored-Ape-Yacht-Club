@@ -12,23 +12,26 @@ import { useEffect } from "react";
 const Hero: React.FC = () => {
 
   useEffect(() => {
-    const preloadImages = () => {
-      const images = [
-        heroMob,
-        heroMob2x,
-        heroTab,
-        heroTab2x,
-        heroDesk,
-        heroDesk2x
-      ];
-      
-      images.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-      });
-    };
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroDesk;
+    link.media = '(min-width: 1280px)';
+    document.head.appendChild(link);
 
-    preloadImages();
+    const link2 = document.createElement('link');
+    link2.rel = 'preload';
+    link2.as = 'image';
+    link2.href = heroTab;
+    link2.media = '(min-width: 768px) and (max-width: 1279px)';
+    document.head.appendChild(link2);
+
+    const link3 = document.createElement('link');
+    link3.rel = 'preload';
+    link3.as = 'image';
+    link3.href = heroMob;
+    link3.media = '(max-width: 767px)';
+    document.head.appendChild(link3);
   }, []);
 
   return (
@@ -63,7 +66,7 @@ const Hero: React.FC = () => {
             height={284}
             className={styles.hero__image}
             loading="eager"
-            data-fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
           />
         </picture>
