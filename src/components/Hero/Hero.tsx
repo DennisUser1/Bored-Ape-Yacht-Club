@@ -7,8 +7,30 @@ import heroTab2x from "../../assets/images/nft/hero/hero_tablet@2x.png";
 import heroDesk from "../../assets/images/nft/hero/hero_desktop.png";
 import heroDesk2x from "../../assets/images/nft/hero/hero_desktop@2x.png";
 import { Link } from "react-scroll";
+import { useEffect } from "react";
 
 const Hero: React.FC = () => {
+
+  useEffect(() => {
+    const preloadImages = () => {
+      const images = [
+        heroMob,
+        heroMob2x,
+        heroTab,
+        heroTab2x,
+        heroDesk,
+        heroDesk2x
+      ];
+      
+      images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    preloadImages();
+  }, []);
+
   return (
     <section className={styles.hero__main}>
       <p className={styles.hero__subtitle}>diD yOu seE iT ?</p>
@@ -40,6 +62,9 @@ const Hero: React.FC = () => {
             width={216}
             height={284}
             className={styles.hero__image}
+            loading="eager"
+            data-fetchpriority="high"
+            decoding="async"
           />
         </picture>
 

@@ -98,7 +98,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({
                   <Link
                     className={styles.menu__link}
                     to={id}
-                    href={`/#${id}`}
+                    href={`#${id}`}
                     spy={true}
                     smooth={true}
                     offset={0}
