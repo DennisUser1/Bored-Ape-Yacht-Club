@@ -65,8 +65,8 @@ const Hero: React.FC = () => {
             width={216}
             height={284}
             className={styles.hero__image}
-            loading="lazy"
-            // fetchPriority="high"
+            loading="eager"
+            fetchPriority="high"
             decoding="async"
           />
         </picture>
